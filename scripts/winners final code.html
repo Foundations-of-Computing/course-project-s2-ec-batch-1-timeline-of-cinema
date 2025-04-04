@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width initial-scale=1.0"> 
+        <title> Timeline of Cinema </title> 
+        <link rel="stylesheet" href="style.css"> 
+        <body> 
+            <h1 class="year">
+                 PICK A YEAR!! 
+            </h1> 
+            <div class="container">
+                 <div class="column">
+                     <button onclick="openPopup(2025)">2025</button> 
+                     <button onclick="openPopup(2024)">2024</button> 
+                     <button onclick="openPopup(2023)">2023</button> 
+                     <button onclick="openPopup(2022)">2022</button> 
+                     <button onclick="openPopup(2021)">2021</button> 
+                    </div> 
+                <div class="column"> 
+                    <button onclick="openPopup(2020)">2020</button> 
+                    <button onclick="openPopup(2019)">2019</button> 
+                    <button onclick="openPopup(2018)">2018</button> 
+                    <button onclick="openPopup(2017)">2017</button> 
+                    <button onclick="openPopup(2016)">2016</button> 
+                </div> 
+                <div class="column"> 
+                    <button onclick="openPopup(2015)">2015</button> 
+                    <button onclick="openPopup(2014)">2014</button> 
+                    <button onclick="openPopup(2013)">2013</button> 
+                    <button onclick="openPopup(2012)">2012</button> 
+                    <button onclick="openPopup(2011)">2011</button> 
+                </div> 
+                <div class="column"> 
+                    <button onclick="openPopup(2010)">2010</button> 
+                    <button onclick="openPopup(2009)">2009</button> 
+                    <button onclick="openPopup(2008)">2008</button> 
+                    <button onclick="openPopup(2007)">2007</button> 
+                    <button onclick="openPopup(2006)">2006</button> 
+                </div> 
+            </div>
+            <!--Popup window--> 
+            <div id="popup" class="popup-overlay"> 
+                <div class="popup-box"> 
+                    <h2 id="popup-title"></h2> 
+                    <p id="popup-director" class="popup-director"></p> 
+                    <div class="popup-images"> 
+                        <img id="popup-movie-image" src="" alt="Movie Image" width="50%"> 
+                        <img id="popup-director-image" src="" alt="Director Image" width="50%" > 
+                        </div> 
+                        <button class="close-btn" onclick="closePopup()">
+                            Close
+                        </button> 
+                    <script> 
+                    /*listing the movies and directors and inserting images*/
+                    const movies = { 
+                        2006: { title: "Crash" ,director: "Paul Haggis" ,movieImage: "2006.jpg" ,directorImage: "2006_dir.jpeg" },
+                        2007: { title: "The Departed", director: "Martin Scorsese" ,movieImage: "2007.jpg" ,directorImage: "2007_dir.jpeg" }, 
+                        2008: { title: "No Country For Old Men" ,director: "Joel and Ethan Coel" ,movieImage: "2008.jpeg", directorImage: "2008_dir.jpeg" }, 
+                        2009: { title: "Slumdog Millionaire" ,director: "Danny Boyle" ,movieImage: "2009.jpg", directorImage: "2009_dir.jpeg" }, 
+                        2010: { title: "The Hurt Locker" ,director: "Kathryn Bigelow" ,movieImage: "2010.jpg" ,directorImage: "2010_dir.jpeg" }, 
+                        2011: { title: "The King's Speech" ,director: "Tom Hooper" ,movieImage: "2011.jpg" ,directorImage: "2011_dir.jpeg" }, 
+                        2012: { title: "The Artist" ,director: "Michel Hazanavicius" ,movieImage: "2012.jpg" ,directorImage: "2012_dir.jpeg" }, 
+                        2013: { title: "Argo" ,director: "Ben Affleck" ,movieImage: "2013.jpg",directorImage: "2013_dir.jpeg" }, 
+                        2014: { title: "12 years a slave",director: "Steve Mcqueen",movieImage: "2014.jpg",directorImage: "2014_dir.jpeg" }, 
+                        2015: { title: "Birdman",director: "Alejandro Gonzalez",movieImage: "2015.jpg",directorImage: "2015_dir.jpeg" }, 
+                        2016: { title: "Spotlight",director: "Tom McCarthy",movieImage: "2016.jpg",directorImage: "2016_dir.jpg" }, 
+                        2017: { title: "Moonlight",director: "Barry Jenkins",movieImage: "2017.jpeg",directorImage: "2017_dir.jpg" },
+                        2018: { title: "The Shape of Water", director: "Guillermo del Toro", movieImage: "2018.png", directorImage: "2018_dir.jpeg" }, 2019: { title: "Green Book", director: "Peter Farrelly", movieImage: "2019.jpg", directorImage: "2019_dir.jpg" }, 2020: { title: "Parasite", director: "Bong Joon-ho", movieImage: "2020.jpg", directorImage: "2020_dir.jpg" },
+                        2019: { title: "Green Book", director: "Peter Farrelly", movieImage: "2019.jpg", directorImage: "2019_dir.jpg" },
+                        2020: { title: "Parasite", director: "Bong Joon-ho", movieImage: "2020.jpg", directorImage: "2020_dir.jpg" },
+                        2021: { title: "Nomadland", director: "Chloé Zhao", movieImage: "2021.jpg", directorImage: "2021_dir.jpeg" },
+                        2022: { title: "CODA", director: "Sian Heder", movieImage: "2022.jpg", directorImage: "2022_dir.jpeg" },
+                        2023: { title: "Everything Everywhere All at Once", director: "Daniel Kwan & Daniel Scheinert", movieImage: "2023.jpg", directorImage: "2023_dir.jpeg" },
+                        2024: { title: "Oppenheimer", director: "Christopher Nolan", movieImage: "2024.jpg", directorImage: "2024_dir.jpeg" },
+                        2025: { title: "Anora", director: "Sean Baker", movieImage: "2025.jpg", directorImage: "2025_dir.jpeg" },
+        };
+        /*function to get a popup window*/
+        function openPopup(year) {
+            document.getElementById("popup-title").innerText = movies[year].title;
+            document.getElementById("popup-director").innerText = "Directed by: " + movies[year].director;
+            document.getElementById("popup-movie-image").src = movies[year].movieImage;
+            document.getElementById("popup-director-image").src = movies[year].directorImage;
+            document.getElementById("popup").style.display = "block";
+        }
+        /*function to close the popup window*/
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+
+            
+           </body>
+    </head>
+</html>
+            
