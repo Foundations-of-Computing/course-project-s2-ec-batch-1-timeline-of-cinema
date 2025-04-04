@@ -1,0 +1,156 @@
+/* Body styling */
+body {
+    background-image: url("homepage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Visit Button */
+.vbtn {
+    background-color: rgba(199, 196, 214, 0.7);
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(7, 7, 7, 0.9);
+}
+
+.vbtn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Heading Styling */
+.heading {
+    position: absolute;
+    font-size: 120px;
+    top: 10px; /* Adjusted for better positioning */
+    left: 20px;
+    color: black;
+    padding: 20px;
+}
+
+/* Subtext styling */
+.para {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    padding: 20px;
+    margin-bottom: 200px;
+}
+
+/* Year Text Formatting */
+.year {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+    position: relative;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(45deg, #23191b, #1b1110);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(76, 95, 64, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #e6fb06f1, #ff416c);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6);
+}
+
+/* Layout Styling */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Popup Window Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Popup Box */
+.popup-box {
+    background: white;
+    width: 400px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+/* Popup Images */
+.popup-image {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-image img {
+    width: 45%;
+    height: 50%;
+    border-radius: 10px;
+    max-height: 200px;
+}
+
+/* Director's Name */
+.popup-director {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Close Button */
+.close-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    position:absolute;
+}
+
+
